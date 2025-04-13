@@ -1,8 +1,14 @@
 name: deploy-vm
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        type: choice
+        options:
+          - dev
+          - prod
 jobs:
   plan:
     runs-on: ubuntu-latest
