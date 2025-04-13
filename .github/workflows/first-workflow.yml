@@ -17,6 +17,10 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        with:
+          Google_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
       - name: Terraform Plan
         run: terraform plan -out=tfplan
+        with:
+          Google_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
